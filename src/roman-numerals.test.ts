@@ -21,6 +21,9 @@ class RomanNumeral {
       if (romanianChar === 'I' && nextRomanianChar === 'V') {
         resultat += 4;
         index += 2;
+      } else if (romanianChar === 'I' && nextRomanianChar === 'X') {
+        resultat += 9;
+        index += 2;
       } else if (this.symbolMap[romanianChar]) {
         resultat += this.symbolMap[romanianChar];
         index += 1;
@@ -42,6 +45,7 @@ test.each([
   ['D', 500],
   ['M', 1000],
   ['IV', 4],
+  ['IX', 9],
 ])('%s should become %s', (input, expected) => {
   expect(new RomanNumeral().of(input)).toBe(expected);
 });
