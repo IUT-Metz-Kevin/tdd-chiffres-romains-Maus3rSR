@@ -1,11 +1,15 @@
 import { test, expect } from 'vitest';
 
 class RomanNumeral {
+  private symbolMap = {
+    I: 1,
+  };
+
   of(value: string): number {
     let index = 0;
     let resultat = 0;
     while (value[index]) {
-      if (value[index] === 'I') resultat += 1;
+      if (this.symbolMap[value[index]]) resultat += 1;
       if (value[index] === 'V') resultat += 5;
       if (value[index] === 'X') resultat += 10;
       if (value[index] === 'L') resultat += 50;
