@@ -15,6 +15,10 @@ class RomanNumeral {
     return this.symbolMap[romanianToTest] < this.symbolMap[higherRomanian];
   }
 
+  private valueOf(romanian: string) {
+    return this.symbolMap[romanian];
+  }
+
   of(value: string): number {
     let index = 0;
     let resultat = 0;
@@ -23,11 +27,10 @@ class RomanNumeral {
       const nextRomanianChar = value[index + 1];
 
       if (this.isLowerThan(romanianChar, nextRomanianChar)) {
-        resultat +=
-          this.symbolMap[nextRomanianChar] - this.symbolMap[romanianChar];
+        resultat += this.valueOf(nextRomanianChar) - this.valueOf(romanianChar);
         index += 2;
-      } else if (this.symbolMap[romanianChar]) {
-        resultat += this.symbolMap[romanianChar];
+      } else if (this.valueOf(romanianChar)) {
+        resultat += this.valueOf(romanianChar);
         index += 1;
       } else throw new Error('Not a Romanian number');
     }
