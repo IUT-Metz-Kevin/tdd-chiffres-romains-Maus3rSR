@@ -11,6 +11,10 @@ class RomanNumeral {
     M: 1000,
   };
 
+  private isLowerThan(romanianToTest: string, higherRomanian: string) {
+    return this.symbolMap[romanianToTest] < this.symbolMap[higherRomanian];
+  }
+
   of(value: string): number {
     let index = 0;
     let resultat = 0;
@@ -19,7 +23,7 @@ class RomanNumeral {
       const nextRomanianChar = value[index + 1];
 
       if (
-        this.symbolMap[romanianChar] < this.symbolMap[nextRomanianChar] &&
+        this.isLowerThan(romanianChar, nextRomanianChar) &&
         this.symbolMap[romanianChar] &&
         this.symbolMap[nextRomanianChar]
       ) {
