@@ -22,11 +22,7 @@ class RomanNumeral {
       const romanianChar = value[index];
       const nextRomanianChar = value[index + 1];
 
-      if (
-        this.isLowerThan(romanianChar, nextRomanianChar) &&
-        this.symbolMap[romanianChar] &&
-        this.symbolMap[nextRomanianChar]
-      ) {
+      if (this.isLowerThan(romanianChar, nextRomanianChar)) {
         resultat +=
           this.symbolMap[nextRomanianChar] - this.symbolMap[romanianChar];
         index += 2;
