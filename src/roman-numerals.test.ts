@@ -5,7 +5,7 @@ class RomanNumeral {
     let index = 0;
     let resultat = 0;
     while (value[index]) {
-      resultat += 1;
+      if (value[index] === 'I') resultat += 1;
       index++;
     }
 
