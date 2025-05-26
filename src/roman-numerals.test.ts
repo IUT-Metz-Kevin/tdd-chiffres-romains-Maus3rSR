@@ -4,6 +4,11 @@ class RomanNumeral {
   private symbolMap = {
     I: 1,
     V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
   };
 
   of(value: string): number {
@@ -12,11 +17,7 @@ class RomanNumeral {
     while (value[index]) {
       if (this.symbolMap[value[index]])
         resultat += this.symbolMap[value[index]];
-      if (value[index] === 'X') resultat += 10;
-      if (value[index] === 'L') resultat += 50;
-      if (value[index] === 'C') resultat += 100;
-      if (value[index] === 'D') resultat += 500;
-      if (value[index] === 'M') resultat += 1000;
+
       index++;
     }
 
