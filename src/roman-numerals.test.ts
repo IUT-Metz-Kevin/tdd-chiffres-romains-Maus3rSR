@@ -7,6 +7,7 @@ class RomanNumeral {
     while (value[index]) {
       if (value[index] === 'I') resultat += 1;
       if (value[index] === 'V') resultat += 5;
+      if (value[index] === 'X') resultat += 10;
       index++;
     }
 
