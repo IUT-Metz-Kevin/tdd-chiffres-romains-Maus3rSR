@@ -15,8 +15,10 @@ class RomanNumeral {
     let index = 0;
     let resultat = 0;
     while (value[index]) {
-      if (this.symbolMap[value[index]])
-        resultat += this.symbolMap[value[index]];
+      const romanianChar = value[index];
+
+      if (this.symbolMap[romanianChar])
+        resultat += this.symbolMap[romanianChar];
       else throw new Error('Not a Romanian number');
 
       index++;
