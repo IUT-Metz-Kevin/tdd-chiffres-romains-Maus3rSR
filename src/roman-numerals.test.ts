@@ -9,7 +9,8 @@ class RomanNumeral {
     let index = 0;
     let resultat = 0;
     while (value[index]) {
-      if (this.symbolMap[value[index]]) resultat += 1;
+      if (this.symbolMap[value[index]])
+        resultat += this.symbolMap[value[index]];
       if (value[index] === 'V') resultat += 5;
       if (value[index] === 'X') resultat += 10;
       if (value[index] === 'L') resultat += 50;
