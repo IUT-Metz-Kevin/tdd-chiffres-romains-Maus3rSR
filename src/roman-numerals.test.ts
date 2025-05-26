@@ -17,6 +17,7 @@ class RomanNumeral {
     while (value[index]) {
       if (this.symbolMap[value[index]])
         resultat += this.symbolMap[value[index]];
+      else throw new Error('Not a Romanian number');
 
       index++;
     }
