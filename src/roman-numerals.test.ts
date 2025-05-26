@@ -19,7 +19,7 @@ class RomanNumeral {
       const nextRomanianChar = value[index + 1];
 
       if (romanianChar === 'I' && nextRomanianChar === 'V') {
-        resultat += 5 - 1;
+        resultat += this.symbolMap[nextRomanianChar] - 1;
         index += 2;
       } else if (romanianChar === 'I' && nextRomanianChar === 'X') {
         resultat += 10 - 1;
