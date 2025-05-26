@@ -51,6 +51,7 @@ test.each([
   ['M', 1000],
   ['IV', 4],
   ['IX', 9],
+  ['CM', 900],
 ])('%s should become %s', (input, expected) => {
   expect(new RomanNumeral().of(input)).toBe(expected);
 });
