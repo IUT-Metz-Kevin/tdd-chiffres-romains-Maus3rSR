@@ -10,6 +10,7 @@ class RomanNumeral {
 test.each([
   ['I', 1],
   ['II', 2],
+  ['III', 3],
 ])('%s should become %s', (input, expected) => {
   expect(new RomanNumeral().of(input)).toBe(expected);
 });
