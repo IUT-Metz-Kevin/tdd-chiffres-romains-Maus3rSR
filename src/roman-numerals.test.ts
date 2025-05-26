@@ -6,6 +6,7 @@ class RomanNumeral {
     let resultat = 0;
     while (value[index]) {
       if (value[index] === 'I') resultat += 1;
+      if (value[index] === 'V') resultat += 5;
       index++;
     }
 
