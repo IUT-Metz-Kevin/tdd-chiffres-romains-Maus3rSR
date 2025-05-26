@@ -16,12 +16,15 @@ class RomanNumeral {
     let resultat = 0;
     while (value[index]) {
       const romanianChar = value[index];
+      const nextRomanianChar = value[index + 1];
 
-      if (this.symbolMap[romanianChar])
+      if (romanianChar === 'I' && nextRomanianChar === 'V') {
+        resultat += 4;
+        index += 2;
+      } else if (this.symbolMap[romanianChar]) {
         resultat += this.symbolMap[romanianChar];
-      else throw new Error('Not a Romanian number');
-
-      index++;
+        index += 1;
+      } else throw new Error('Not a Romanian number');
     }
 
     return resultat;
