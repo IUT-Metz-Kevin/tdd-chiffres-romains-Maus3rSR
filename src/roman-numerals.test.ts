@@ -3,6 +3,7 @@ import { test, expect } from 'vitest';
 class RomanNumeral {
   private symbolMap = {
     I: 1,
+    V: 5,
   };
 
   of(value: string): number {
@@ -11,7 +12,6 @@ class RomanNumeral {
     while (value[index]) {
       if (this.symbolMap[value[index]])
         resultat += this.symbolMap[value[index]];
-      if (value[index] === 'V') resultat += 5;
       if (value[index] === 'X') resultat += 10;
       if (value[index] === 'L') resultat += 50;
       if (value[index] === 'C') resultat += 100;
