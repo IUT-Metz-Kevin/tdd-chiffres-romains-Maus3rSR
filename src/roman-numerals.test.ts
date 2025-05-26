@@ -22,7 +22,7 @@ class RomanNumeral {
         resultat += this.symbolMap[nextRomanianChar] - 1;
         index += 2;
       } else if (romanianChar === 'I' && nextRomanianChar === 'X') {
-        resultat += 10 - 1;
+        resultat += this.symbolMap[nextRomanianChar] - 1;
         index += 2;
       } else if (this.symbolMap[romanianChar]) {
         resultat += this.symbolMap[romanianChar];
